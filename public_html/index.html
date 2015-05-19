@@ -1,0 +1,38 @@
+<!DOCTYPE html><html lang='ru'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link href="./layout/css/frontend.css" rel="stylesheet">
+  <script type="text/javascript" src="./layout/js/frontend.js" async></script>
+  <script src="http://127.0.0.1:35729/livereload.js?ext=Safari&amp;extver=2.0.9"></script>
+  <title>L&M</title>
+</head><body>
+<div class="tabs">
+  <div class="tabs__triggers"><a href="#login" class="tabs__trigger tabs__trigger--active">Войти</a><a href="#signup" class="tabs__trigger">Регистрация</a></div>
+  <div class="tabs__contents">
+    <div class="tabs__content tabs__content--active">
+      <form id="LoginForm" novalidate="novalidate" action="/main.html" method="post" class="login tabs__form">
+        <input id="Login" size="11" placeholder="EMAIL" name="UserLoginForm[username]" type="text" maxlength="524288" class="login__input">
+        <input id="Password" name="UserLoginForm[password]" type="password" placeholder="ПАРОЛЬ" class="login__input">
+        <div class="center login__lines"><a href="/remind/" class="login__link">Забыли пароль?</a></div>
+        <div class="center">
+          <button type="submit" onclick="location.href='/main.html';return false;" class="login__submit"> <span>Войти</span></button>
+        </div>
+      </form>
+      <div class="tabs__footer">
+        <div class="center"><a href="#">контакты</a><br><a href="#">вопросы и ответы</a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<footer class="footer">
+  <p><a href="mailto:help@lmlab.ru">help@lmlab.ru</a><span>|</span><a>Риски, связанные со здоровьем </a><span>|</span><a>Правила использования сайта</a></p>
+  <p>Горячая линия <a href="tel:88002001105">8-800-200-11-05 </a>&nbsp; с 9:00 до 21:00 по Московскому времени.</p>
+  <p>© 2015 Общество с ограниченной ответственностью "Филип Моррис Сэйлз энд Маркетинг" аффилированная компания Philip Morris International.</p>
+  <p>Доступ на веб-сайт разрешен только гражданам РФ старше 18 лет, являющимся потребителями сигарет, с компьютеров, находящихся в интернет-сети РФ.	</p>
+  <div class="footer__attention">КУРЕНИЕ УБИВАЕТ</div>
+</footer></body>
+</html>

@@ -1,0 +1,26 @@
+include includes/header
+<body>
+.tabs
+	.tabs__triggers
+		a.tabs__trigger.tabs__trigger--active(href="#login") Войти
+		a.tabs__trigger(href="#signup") Регистрация
+	.tabs__contents
+		.tabs__content.tabs__content--active
+			form.login.tabs__form#LoginForm(novalidate='novalidate', action='/main.html', method='post')
+				input.login__input#Login(size='11', placeholder='EMAIL', name='UserLoginForm[username]', type='text', maxlength='524288')
+				input.login__input#Password(name='UserLoginForm[password]', type='password', placeholder='ПАРОЛЬ')
+				.center.login__lines
+					a.login__link(href='/remind/') Забыли пароль?
+				.center
+					button.login__submit(type='submit', onclick="location.href='/main.html';return false;") 
+						span Войти
+			.tabs__footer
+				.center
+					a(href="#") контакты
+					br
+					a(href="#") вопросы и ответы
+
+
+include includes/footer
+</body>
+</html>

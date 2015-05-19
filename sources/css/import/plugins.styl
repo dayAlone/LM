@@ -1,0 +1,29 @@
+/*
+ * Модификаторы плагинов
+ */
+.fotorama__arr,.fotorama__fullscreen-icon,.fotorama__video-close,.fotorama__video-play
+	background-image url(../images/plugins/fotorama.png)
+	@media (-webkit-min-device-pixel-ratio:1.5),(min-resolution:144dpi)
+		background-image url(../images/plugins/fotorama@2x.png)
+
+.pp_bottom div, .pp_top div, .pp_left, .pp_right
+	background: #fff !important;
+	background-image: none !important;
+
+div.pp_pic_holder.pp_default
+	padding-right 5px
+
+div.pp_default .pp_top .pp_left, div.pp_default .pp_top .pp_right, div.pp_default .pp_expand, div.pp_default .pp_expand:hover, div.pp_default .pp_contract, div.pp_default .pp_contract:hover, div.pp_default .pp_close, div.pp_default .pp_nav .pp_pause, div.pp_default a.pp_arrow_next, div.pp_default .pp_bottom .pp_left, div.pp_default .pp_bottom .pp_right, div.pp_default a.pp_arrow_previous, div.pp_default a.pp_arrow_next, div.pp_default .pp_nav .pp_play, div.pp_default .pp_nav .pp_pause
+	background-image url(../images/plugins/sprite.png)
+
+div.pp_default .pp_top .pp_middle, div.pp_default .pp_bottom .pp_middle
+	background-image url(../images/plugins/sprite-x.png)
+
+div.pp_default .pp_content_container .pp_left, div.pp_default .pp_content_container .pp_right
+	background-image url(../images/plugins/sprite-y.png)
+div.pp_default .pp_previous:hover
+	background-image url(../images/plugins/sprite_prev.png)
+div.pp_default .pp_next:hover
+	background-image url(../images/plugins/sprite_next.png)
+div.pp_default .pp_loaderIcon
+	background-image url(../images/plugins/loader.gif)

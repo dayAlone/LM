@@ -1,0 +1,223 @@
+.video
+	margin-top -15px
+	font-size 13px
+	@media (min-width scr_xs)
+		font-size 22px
+	&__name
+		width 70%
+		color blue
+		text-transform: uppercase
+		font-size 17px
+		font-weight: bold
+		line-height 1.2
+		@media (min-width scr_xs)
+			font-size 32px
+	&__icon
+		white-space no-wrap
+		
+		line-height 1.2
+		padding-left 13px
+		position relative
+		opacity: .85
+		@media (min-width scr_xs)
+			font-size 26px
+			padding-left: 26px
+		span
+			display inline-block
+			vertical-align: middle
+		svg
+			position absolute
+			max-width 9px
+			top -5px
+			left 0
+			display: inline-block
+			vertical-align: middle
+			margin-right 5px
+			@media (min-width scr_xs)
+				max-width 18px
+				top 2px
+		&--comment
+			padding-left 17px
+			@media (min-width scr_xs)
+				padding-left 30px
+			svg
+				max-width 12px
+				top -3px
+				@media (min-width scr_xs)
+					max-width 24px
+					top 4px
+	&__list, &__comments
+		width 100%
+		width calc(100% - 16px)
+		margin 0 8px 10px
+		padding 10px
+		border 1px solid #a0a0a0
+	
+	&__list
+		background blue
+		@media (min-width scr_xs)
+			padding: 15px
+		&-item + .video__list-item, &-more
+			border-top 1px solid alpha(#7a9aae, .7)
+			padding-top: 7px
+			@media (min-width scr_xs)
+				padding-top 15px
+		&-more
+			text-transform: uppercase
+			display block
+			text-align: center
+			padding-top 11px
+			color white
+			
+			span
+				border-line alpha(white, .7)
+			&:hover
+				color white
+			svg
+				width 7px
+				position relative
+				top 1px
+				margin-left 5px
+				@media (min-width scr_xs)
+					width 15px
+					top -1px
+					margin-left 8px
+		&-item
+			margin-bottom 7px
+			line-height 77px
+			@media (min-width scr_xs)
+				margin-bottom 15px
+				line-height 144px
+			.row
+				padding 0 7px
+			[class*='col-']
+				padding 0 8px
+		&-name
+			text-transform: uppercase
+			
+			font-weight: bold
+			line-height 1.2
+		&-content
+			display inline-block
+			vertical-align: middle
+			
+		&-image
+			width 100%
+			height 77px
+			background #eaeaea
+			position relative
+			background-size cover
+			background-position center center
+			@media (min-width scr_xs)
+				height 144px
+			&:after
+				position absolute
+				top 0
+				content ""
+				width 36px
+				height 36px
+				top 50%
+				left 50%
+				opacity: .7
+				background url(/layout/images/video.png)
+				background-size cover
+				transform translateX(-50%) translateY(-50%)
+				@media (min-width scr_xs)
+					width 72px
+					height 72px
+	&__comment
+		margin-bottom 8px
+		& + .video__comment
+			margin-top 15px
+			@media (min-width scr_xs)
+				margin-top 30px
+		.row
+			padding 0 10px
+			> [class*='col-']
+				padding 0 5px
+		&-input
+			@extends .input
+			background #ececec
+			min-height 50px
+			margin-bottom 0
+			resize none
+			@media (min-width scr_xs)
+				min-height 100px
+		&-time
+			margin-left 7px
+			opacity: .7
+		&-author
+			font-weight: bold
+		&-actions
+			margin-top 8px
+		&-meta
+			margin-bottom 6px
+		&-image
+			height 50px
+			width 50px
+			display: inline-block
+			background-size cover
+			@media (min-width scr_xs)
+				width 100px
+				height 100px
+		&-add
+			text-transform: uppercase
+			color blue
+			border-line alpha(blue, .7)
+			&:hover
+				color blue
+	&__comments, &__info
+		
+		background white
+		color blue
+		line-height 1.2
+		.video__icon svg path
+			fill blue
+		&-more
+			@extends .video__list-more
+			color blue
+			margin-top 12px
+			border-color alpha(#7698ba, .7)
+			span
+				border-line alpha(blue, .7)
+			svg path
+				fill blue
+	&__info
+		margin-bottom 10px
+		padding 12px 15px 11px
+		@media (min-width scr_xs)
+			padding-top 19px
+		&-more
+			margin-top 0
+			padding-top 0
+			border-top 0
+			text-align left
+	&__title
+		min-height 175px
+		background-size cover
+		overflow: hidden
+		position relative
+		padding 13px 15px
+		@media (min-width scr_xs)
+			min-height 350px
+		&:before, &:after
+			margin-top 15px
+		&:before
+			@extends .video__list-image:after
+			width 53px
+			height 53px
+			opacity 1
+			@media (min-width scr_xs)
+				width 106px
+				height 106px
+		&:after
+			content ""
+			position absolute
+			top 0
+			left 0
+			width 100%
+			height 100%
+			background url(/layout/images/circles.png) center center
+			background-size auto 600px
+	&__send
+		@extends .button

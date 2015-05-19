@@ -1,0 +1,17 @@
+include includes/header
+<body>
+include includes/toolbar
+.wrap
+	.wrap__content
+		.invite
+			.invite__title Напиши письмо Сергею
+			
+			form#feedback-form(action='/userVideo/sendFeedback/', method='post')
+				input#Feedback_topic.form-input.invite__input.xs-margin-bottom(name='Feedback[topic]', type='text', maxlength='255', placeholder="Тема письма")
+				textarea#Feedback_message.form-textarea.invite__textarea(cols='30', rows='10', name='Feedback[message]', placeholder="Текст письма")
+				.center.xs-margin-top
+					button.invite__submit.submit(type='submit') Отправить
+
+		include includes/footer
+</body>
+</html>

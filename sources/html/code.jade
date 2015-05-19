@@ -1,0 +1,33 @@
+include includes/header
+<body>
+include includes/toolbar
+.wrap
+	.wrap__content
+		.code
+			.code__title 
+				img(src="/layout/images/code.png")
+				| джокер-бейдж
+			p 
+				strong 1. 
+				| Сотри защитный слой карточки;
+				br
+				strong 2. 
+				| Введи код в специальное поле;
+				br
+				strong 3. 
+				| Получи специальный джокер-бейдж!
+				br
+				strong 4. 
+				| Джокер-бейдж ты можешь обменять на расходуемый бейдж, З исключением «Лучший друг» и «Отличное начало», в личном кабинете
+			.code__title ввести код
+			form(action="")
+				.code__input-frame
+					input(name="jokerCode" id="jokerCode" type="text" class="code__input" cols="12" rows="1" placeholder="XXXXXXXXXXXX")
+				.center
+					button(type="submit").code__submit отправить
+			.code__footer
+				p Скрэтч-карты выдаются только официальными представителями команды "L&M" совершеннолетним курьльщикам в качестве комплимента за регистрацию на сайте www.lmlab.ru, начиная с 13 октября 2014 года. Скрэтч-карты не предназначены для дальнейшей последующей продажи, не подлежит обмену и передаче любому третьему лицу и могут быть использованы только совершеннолетними курильщиками, непосредственно получившими скрэтч-карту от официального представителя команды "L&M".
+
+		include includes/footer
+</body>
+</html>

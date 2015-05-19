@@ -1,0 +1,47 @@
+include includes/header
+<body class="">
+include includes/toolbar
+.wrap
+	.wrap__content
+		a.block.block--video(style="background-image:url(/layout/images/b1.jpg)" href="/video.html")
+			.block__title & больше легких решений!
+			.block__divider
+			.block__text Узнай, как добиться больших <br>результатов с меньшими усилиями
+
+		a.block.block--white(style="background-image:url(/layout/images/b2.jpg)")
+			.block__title & больше технологий!
+			.block__divider
+			.block__text Современный фильтр RECESSED <br>от создателей PARLIAMENT
+			.block__image
+				img(src="/layout/images/b-filter.png")
+
+		.block.block--slider.fotorama(data-width="100%", data-height="185", data-autoplay="true")
+			.block__slide
+				a.block.block--white(style="background-image:url(/layout/images/b3.jpg)")
+					.block__title & больше бейджей!
+					.block__divider
+					.block__text Собирай свою коллекцию – <br>получай призы!
+					.center
+						img(src="/layout/images/bages.png")
+			.block__slide
+				a.block.block--white(style="background-image:url(/layout/images/bg-1.jpg)", href="/tests.html")
+					.block__title & ПРОЙДИ ТЕСТ!
+					.block__divider
+					.block__text Проверь свои знания <br>и получи замечательные призы
+					
+			.block__slide
+				a.block.block--white(style="background-image:url(/layout/images/bg-2.jpg)")
+					.block__title & больше призов
+					.block__divider
+					.block__text Крутые подарки ждут тебя в<br>розыгрышах каждые две недели!
+					.block__image
+						img(src="/layout/images/main-presents.png")
+			
+
+
+		a.block.block--white(style="background-image:url(/layout/images/b4.jpg)")
+			.block__title & больше преимуществ
+
+		include includes/footer
+</body>
+</html>

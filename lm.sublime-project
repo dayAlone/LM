@@ -1,0 +1,17 @@
+{
+	"folders":
+	[
+		{
+			"path": "sources/css/import/"
+		},
+		{
+			"path": "sources/js/"
+		},
+		{
+			"path": "sources"
+		},
+		{
+			"path": "."
+		}
+	]
+}

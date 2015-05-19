@@ -1,0 +1,38 @@
+include includes/header
+<body>
+include includes/toolbar
+.wrap
+	.wrap__content
+		.invite
+			.invite__title пригласить друга
+			p Только граждане РФ старше 18 лет <br>Потребители сигарет
+			form#form-send.zf.zf-inited(name='form-send', method='post', action='/profile/sendInvite/', novalidate='')
+				label.invite__label Имя друга*
+				input.invite__input#InviteName(name='Invite[Name]', type='text', size='30', data-required='')
+			
+				label.invite__label EMAIL*
+				input.invite__input#InviteEmail(name='Invite[Email]', type='text', size='30', data-required='')
+
+				label.invite__label Тема
+					h3 Есть новость!
+					p.small
+						| Это персональное сообщение адресовано исключительно тебе,
+						| и не должно быть переадресовано другим лицам.
+						| Это сообщение предназначено только для лиц старше 18 лет,
+						| проживающих в России и являющихся потребителями сигарет.
+						| Это сообщение автоматически отправлено тебе, так как твой друг Мария хочет пригласить тебя на сайт.
+					h3 Курение убивает
+					h3 Привет, (Имя друга*)!
+					h3
+						| я приглашаю тебя зарегистрироваться на 
+						a(href='//www.lmlab.ru') сайте
+						| .
+					textarea.invite__textarea#InviteText(name='Invite[Text]', placeholder='Введите текст сообщения')
+					h3 Мария Соколова
+				
+				.center
+					button.invite__submit.submit(type='submit') Отправить
+
+		include includes/footer
+</body>
+</html>

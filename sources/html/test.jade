@@ -1,0 +1,28 @@
+include includes/header
+<body>
+include includes/toolbar
+.wrap
+	.wrap__content
+		.test
+			.row.test__toolbar
+				.col-xs-6.test__steps.right 1/10
+				.col-xs-6.test__timer 0:20
+			.test__question какая технология отличает обновленные сигареты L&M?
+			.test__answers
+				.test__answer
+					input(type="radio", checked, name="q")#q1
+					label(for="q1") Новый фильтр RECESSED меньше мнется и намокает при курении, сигарета лучше сохраняет форму
+				.test__answer
+					input(type="radio", name="q")#q2
+					label(for="q2") Новый фильтр RECESSED меньше мнется и намокает при курении, сигарета лучше сохраняет форму
+				.test__answer
+					input(type="radio", name="q")#q3
+					label(for="q3") Новый фильтр RECESSED меньше мнется и намокает при курении, сигарета лучше сохраняет форму
+				.test__answer
+					input(type="radio", name="q")#q4
+					label(for="q4") Новый фильтр RECESSED меньше мнется и намокает при курении, сигарета лучше сохраняет форму
+			.center
+				a(href="/prizes.html").test__presents к полному списку призов
+		include includes/footer
+</body>
+</html>

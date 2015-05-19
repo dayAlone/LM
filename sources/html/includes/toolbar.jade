@@ -1,0 +1,26 @@
+toolbar.toolbar
+	.toolbar__content
+		a.toolbar__trigger(href="#")
+			include ../../../public_html/layout/images/svg/nav.svg
+		a(href="/main.html")
+			img(src="/layout/images/logo.png", alt="", height="42")
+
+sidebar.sidebar
+	.sidebar__content
+		.profile
+			.profile__avatar(style="background-image: url(/layout/images/photo.jpg)")
+				img.profile__badge(src="/layout/images/badge.png")
+			br
+			| Привет, 
+			a(href="#") Александра
+			|!
+		nav.nav
+			a.nav__item(href="/code.html").center
+				img(src="/layout/images/code.png")
+				| ВВЕСТИ КОД С КАРТОЧКИ 
+			a.nav__item(href="/product.html") L&M
+			a.nav__item(href="/video.html") ВИДЕО-ШОУ
+			a.nav__item(href="/prizes.html") ПРИЗЫ
+			a.nav__item(href="/tests.html") ТЕСТЫ
+			a.nav__item(href="/") ВЫЙТИ
+	a.sidebar__trigger
