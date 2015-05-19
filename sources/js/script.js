@@ -8,7 +8,16 @@
   };
 
   sizeAction = function() {
-    return $('.tabs').elem('content').height($(window).height() - 50);
+    var el, left, scroll;
+    $('.tabs').elem('content').height($(window).height() - 50);
+    scroll = $('.packages').elem('scroll');
+    if (scroll.lenght > 0) {
+      el = scroll.find('a:nth-child(2)');
+      left = (el.position().left + el.width() / 2) - $('body').width() / 2;
+      return $('.packages').elem('scroll').animate({
+        scrollLeft: left
+      }, 300);
+    }
   };
 
   debounce = function(func, wait, immediate) {
@@ -48,16 +57,10 @@
   };
 
   $(document).ready(function() {
-    var el, left, scroll, scrollTimer, x;
+    var scrollTimer, x;
     $('.sidebar').elem('trigger').on('click scroll touchstart mousewheel', function(e) {
       return debounce(triggerNav(), 400);
     });
-    scroll = $('.packages').elem('scroll');
-    el = scroll.find('a:nth-child(2)');
-    left = (el.position().left + el.width() / 2) - $('body').width() / 2;
-    $('.packages').elem('scroll').animate({
-      scrollLeft: left
-    }, 300);
     $('.toolbar').elem('trigger').on('click', function(e) {
       console.log(1);
       triggerNav();
