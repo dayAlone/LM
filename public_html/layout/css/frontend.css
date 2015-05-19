@@ -7667,6 +7667,7 @@ svg g {
 .code .code__title,
 .invite__title,
 .invite__label,
+.packages__title,
 .product__name,
 .product__title,
 .present__title {
@@ -7680,6 +7681,7 @@ svg g {
   .code .code__title,
   .invite__title,
   .invite__label,
+  .packages__title,
   .product__name,
   .product__title,
   .present__title {
@@ -7690,6 +7692,7 @@ svg g {
 .code .code__title img,
 .invite__title img,
 .invite__label img,
+.packages__title img,
 .product__name img,
 .product__title img,
 .present__title img {
@@ -7700,6 +7703,7 @@ svg g {
   .code .code__title img,
   .invite__title img,
   .invite__label img,
+  .packages__title img,
   .product__name img,
   .product__title img,
   .present__title img {
@@ -7961,6 +7965,7 @@ svg g {
 }
 #filter {
   padding: 0;
+  margin-bottom: 30px;
 }
 @media (min-width: 480px) {
   #filter {
@@ -7987,6 +7992,24 @@ svg g {
 @media (min-width: 480px) {
   #filter .fotorama__nav-wrap {
     bottom: 10px;
+  }
+}
+.packages__scroll {
+  margin-right: -15px;
+  margin-left: -15px;
+  white-space: nowrap;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: 10px;
+}
+.packages__scroll img {
+  margin: 0 10px;
+  max-width: 40%;
+}
+@media (min-width: 480px) {
+  .packages__scroll {
+    margin-right: -30px;
+    margin-left: -30px;
   }
 }
 .product__tech-logos {

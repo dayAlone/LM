@@ -40,6 +40,14 @@ $(document).ready ->
 	$('.sidebar').elem('trigger').on 'click scroll touchstart mousewheel', (e)->
 		debounce triggerNav(), 400
 
+	scroll = $('.packages').elem('scroll')
+	el = scroll.find('a:nth-child(2)')
+
+	left = ( el.position().left + el.width()/2) - $('body').width()/2
+
+	$('.packages').elem('scroll').animate({
+		scrollLeft: left
+	}, 300);
 	$('.toolbar').elem('trigger').on 'click', (e)->
 		console.log 1
 		triggerNav()

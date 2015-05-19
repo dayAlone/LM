@@ -459,6 +459,7 @@ svg
 		padding 30px 25px 25px
 #filter
 	padding 0
+	margin-bottom 30px 
 	@media (min-width scr_xs)
 		padding 0
 	.fotorama
@@ -475,6 +476,23 @@ svg
 			bottom 0px
 			@media (min-width scr_xs)
 				bottom 10px
+
+.packages
+	&__scroll
+		margin-right -15px
+		margin-left -15px
+		white-space no-wrap
+		overflow: scroll
+		-webkit-overflow-scrolling: touch;
+		padding-bottom 10px
+		img
+			margin 0 10px
+			max-width 40%
+		@media (min-width scr_xs)
+			margin-right -30px
+			margin-left -30px
+	&__title
+		@extends .code .code__title
 .product
 	/*
 	img
