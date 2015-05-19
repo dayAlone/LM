@@ -41,7 +41,7 @@
    "fotorama":{
       "js":"/fotorama/fotorama.js",
       "css":"/fotorama/fotorama.css",
-      "files": "./bower_components/fotorama/*.png"
+      "files": "/fotorama/*.png"
    },
    "history":{
       "js":"/history.js/scripts/bundled-uncompressed/html5/jquery.history.js"

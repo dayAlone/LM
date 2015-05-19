@@ -440,23 +440,43 @@ svg
 				font-size 22px
 				margin-top 20px
 
+
+#products, #techs, #filter
+	border 1px solid #466788
+	padding 20px 10px 0px
+	background-color alpha(#002C78, .4)
+	@media (min-width scr_xs)
+		margin-bottom 50px
+		padding 30px 10px 25px
+	.fotorama
+		&__wrap, &__stage, &__stage__shaft
+			@media (min-width scr_xs)
+				min-height 400px
+
 #products
+	padding 20px 15px 0px
 	@media (min-width scr_xs)
-		margin-bottom 50px
+		padding 30px 25px 25px
+#filter
+	padding 0
+	@media (min-width scr_xs)
+		padding 0
 	.fotorama
 		&__wrap, &__stage, &__stage__shaft
 			@media (min-width scr_xs)
-				min-height 620px
-
-#techs
-	@media (min-width scr_xs)
-		margin-bottom 50px
-	.fotorama
-		&__wrap, &__stage, &__stage__shaft
+				min-height 500px	
+		&__arr
+			&--prev
+				left 13px
+			&--next
+				right 13px
+		&__nav-wrap
+			position absolute
+			bottom 0px
 			@media (min-width scr_xs)
-				min-height 480px
-
+				bottom 10px
 .product
+	/*
 	img
 		max-width 95%
 		&.small
@@ -465,33 +485,92 @@ svg
 			vertical-align: bottom
 			@media (min-width scr_xs)
 				max-width 160px
-	&__item
+	*/
+	&__tech-logos
+		margin-top 25px
+		max-width 40%
+		margin-left 10px
+		@media (min-width scr_xs)
+			margin-left 30px
+			margin-top 45px
 		img
-			max-width 95%
-			margin-top -25px
+			max-width 100%
+			margin-bottom 25px
+	&__item
+		position relative
+	&__image
+		position absolute
+		max-width 47%
+		top 0
+		right 0px
+		@media (min-width scr_xs)
+			right 20px
 	&__name, &__title
 		@extends .code .code__title
 		margin-bottom 3px
 	&__description
-		font-size 10px
+		font-size 9px
 		opacity .5
-		line-height 1.2
+		line-height 1.4
 		@media (min-width scr_xs)
 			font-size 20px
+
 	&__tech
+		background-size cover
+		#filter &
+			min-height 280px
+			padding 20px 15px 40px
+			@media (min-width scr_xs)
+				padding 30px 25px 25px
+				min-height 500px
 		&-content
-			
 			max-width 70%
 			margin 0 auto
 			line-height 1.2
+			&--fullwidth
+				max-width 95%
 			img
-				margin-top 20px
-				margin-bottom 10px
+				max-width 95%
+				&.small
+					max-width 80px
+					margin 0
+					vertical-align: bottom
+					@media (min-width scr_xs)
+						max-width 160px
 			p
 				margin-top 20px
 				@media (min-width scr_xs)
 					font-size 24px
-	
+	&__feature
+		background-size cover
+		&-title
+			max-width 88% !important
+			margin-top 15px
+		&-image
+			position absolute
+			bottom 15px
+			left 0px
+			max-height 60%
+			max-width 50% !important
+			&--center
+				bottom 30px
+			.product__tech-content--right &
+				left auto
+				right 15px
+				bottom 25px
+		&-text
+			text-transform: uppercase
+			font-weight: bold
+			width 65%
+			margin-left 41%
+			
+			font-size 12px
+			line-height 1.2
+			.product__tech-content--right &
+				margin-left 0px
+				max-width 55%
+			@media (min-width scr_xs)
+				line-height 1.5
 .product, .present__slider
 	.fotorama
 		&__wrap, &__stage, &__stage__shaft
@@ -512,6 +591,30 @@ svg
 				height 22px
 		&__nav__frame.fotorama__active .fotorama__dot
 			background blue
+
+.test-link
+	width 100%
+	display block
+	color white
+	height 40px
+	line-height 42px
+	padding 0 15px
+	margin-bottom 20px
+	border 1px solid #a0a0a0
+	text-align: right
+	background-size 101% auto !important
+	background-position center center
+	text-transform: uppercase
+	text-shadow 0 1px 5px rgba(0, 0, 0, 0.75)
+	font-weight: bold
+	font-size 17px
+	&:hover
+		color white
+	@media (min-width scr_xs)
+		height 80px
+		font-size 34px
+		line-height 83px
+		margin-bottom 40px
 
 .present
 	font-size 13px
@@ -543,6 +646,14 @@ svg
 		@extends .code .code__title
 		
 .fotorama
+	&__arr
+		margin-top -10px
+		background url(/layout/images/arrows.png) top left
+		background-size cover
+		&--next
+			background-position top right
+		&--disabled
+			display none
 	&__nav--dots .fotorama__nav__frame
 		width 14px
 		@media (min-width scr_xs)
