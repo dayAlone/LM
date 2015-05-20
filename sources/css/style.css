@@ -3219,12 +3219,29 @@ div.pp_default .pp_loaderIcon {
   -ms-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.open .toolbar {
+.open--left .toolbar {
   -webkit-transform: translateX(calc(50% - 56px));
   -moz-transform: translateX(calc(50% - 56px));
   -o-transform: translateX(calc(50% - 56px));
   -ms-transform: translateX(calc(50% - 56px));
   transform: translateX(calc(50% - 56px));
+}
+.toolbar__profile {
+  display: none;
+  width: 37px;
+  height: 37px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  border: 1px solid #fff;
+  right: 10px;
+  top: 9px;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  position: absolute;
+}
+.profile .toolbar__profile {
+  display: block;
 }
 .toolbar__trigger {
   position: absolute;
@@ -3245,14 +3262,16 @@ div.pp_default .pp_loaderIcon {
   -ms-transition-duration: 0.3s;
   transition-duration: 0.3s;
 }
-.toolbar__trigger--active svg {
+.toolbar__trigger--active svg,
+.open--right .toolbar__trigger svg {
   -webkit-transform: scale(1.1);
   -moz-transform: scale(1.1);
   -o-transform: scale(1.1);
   -ms-transform: scale(1.1);
   transform: scale(1.1);
 }
-.toolbar__trigger--active svg path#p1 {
+.toolbar__trigger--active svg path#p1,
+.open--right .toolbar__trigger svg path#p1 {
   -webkit-transform-origin: 100% 100%;
   -moz-transform-origin: 100% 100%;
   -o-transform-origin: 100% 100%;
@@ -3264,7 +3283,8 @@ div.pp_default .pp_loaderIcon {
   -ms-transform: rotate(-45deg) translateY(-0.5px);
   transform: rotate(-45deg) translateY(-0.5px);
 }
-.toolbar__trigger--active svg path#p3 {
+.toolbar__trigger--active svg path#p3,
+.open--right .toolbar__trigger svg path#p3 {
   -webkit-transform-origin: 100% 100%;
   -moz-transform-origin: 100% 100%;
   -o-transform-origin: 100% 100%;
@@ -3276,7 +3296,8 @@ div.pp_default .pp_loaderIcon {
   -ms-transform: rotate(45deg) translateY(1px) translateX(-1px);
   transform: rotate(45deg) translateY(1px) translateX(-1px);
 }
-.toolbar__trigger--active svg path#p2 {
+.toolbar__trigger--active svg path#p2,
+.open--right .toolbar__trigger svg path#p2 {
   opacity: 0;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
@@ -3323,7 +3344,30 @@ div.pp_default .pp_loaderIcon {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
   filter: alpha(opacity=0);
 }
-.open .sidebar {
+.open--left .sidebar--left {
+  -webkit-transform: translateX(0%);
+  -moz-transform: translateX(0%);
+  -o-transform: translateX(0%);
+  -ms-transform: translateX(0%);
+  transform: translateX(0%);
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+}
+.sidebar--right {
+  -webkit-transform: translateX(100%);
+  -moz-transform: translateX(100%);
+  -o-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(100%);
+}
+.sidebar--right .sidebar__content {
+  left: 20%;
+}
+.sidebar--right .sidebar__trigger {
+  right: 80%;
+}
+.open--right .sidebar--right {
   -webkit-transform: translateX(0%);
   -moz-transform: translateX(0%);
   -o-transform: translateX(0%);
@@ -3359,7 +3403,25 @@ div.pp_default .pp_loaderIcon {
   -webkit-box-shadow: 0 2px 13px rgba(0,0,0,0.59);
   box-shadow: 0 2px 13px rgba(0,0,0,0.59);
 }
-.profile {
+.sidebar .badge {
+  text-align: center;
+  line-height: 200px;
+  height: 190px;
+}
+.sidebar .badge__content {
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 30px;
+  font-weight: bold;
+}
+.sidebar .badge img {
+  max-height: 95px;
+  margin-bottom: 10px;
+}
+.sidebar .badge,
+.sidebar .profile {
   width: 100%;
   background: #001a51 url("/layout/images/profile.jpg") top left;
   -webkit-background-size: cover;
@@ -3370,14 +3432,16 @@ div.pp_default .pp_loaderIcon {
   font-size: 17px;
   text-transform: uppercase;
   padding-bottom: 19px;
+  display: block;
 }
 @media (min-width: 768px) {
-  .profile {
+  .sidebar .badge,
+  .sidebar .profile {
     font-size: 30px;
     padding-bottom: 30px;
   }
 }
-.profile a {
+.sidebar .profile a {
   color: #fff;
   background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 70%, rgba(255,255,255,0.7) 70%);
   background-image: -moz-linear-gradient(top, rgba(0,0,0,0) 70%, rgba(255,255,255,0.7) 70%);
@@ -3390,10 +3454,10 @@ div.pp_default .pp_loaderIcon {
   background-size: 2px 2px;
   background-position: 0 calc(100%);
 }
-.profile a:hover {
+.sidebar .profile a:hover {
   text-decoration: none;
 }
-.profile__badge {
+.sidebar .profile__badge {
   width: 47px;
   position: absolute;
   top: -10px;
@@ -3423,13 +3487,13 @@ div.pp_default .pp_loaderIcon {
   transform: scale(0.5);
 }
 @media (min-width: 768px) {
-  .profile__badge {
+  .sidebar .profile__badge {
     width: 94px;
     top: -20px;
     left: -40px;
   }
 }
-.open .profile__badge {
+.open .sidebar .profile__badge {
   opacity: 1;
   -ms-filter: none;
   filter: none;
@@ -3439,7 +3503,7 @@ div.pp_default .pp_loaderIcon {
   -ms-transform: scale(1);
   transform: scale(1);
 }
-.profile__avatar {
+.sidebar .profile__avatar {
   display: inline-block;
   position: relative;
   height: 110px;
@@ -3455,7 +3519,7 @@ div.pp_default .pp_loaderIcon {
   margin-bottom: 5px;
 }
 @media (min-width: 768px) {
-  .profile__avatar {
+  .sidebar .profile__avatar {
     width: 220px;
     height: 220px;
     margin-top: 50px;
@@ -3472,6 +3536,7 @@ div.pp_default .pp_loaderIcon {
   color: #fff;
   font-size: 17px;
   font-weight: bold;
+  text-transform: uppercase;
 }
 .nav__item img {
   margin-right: 8px;
@@ -3517,7 +3582,7 @@ body {
   margin: 0 auto;
   position: relative;
 }
-body.open {
+.open body {
   overflow: hidden;
 }
 @media (min-width: 768px) {
@@ -3964,11 +4029,20 @@ svg g {
   opacity: 0.5;
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
+}
+.open--left .wrap__content {
   -webkit-transform: translateX(calc(100% - 56px));
   -moz-transform: translateX(calc(100% - 56px));
   -o-transform: translateX(calc(100% - 56px));
   -ms-transform: translateX(calc(100% - 56px));
   transform: translateX(calc(100% - 56px));
+}
+.open--right .wrap__content {
+  -webkit-transform: translateX(calc(-100% + 66px));
+  -moz-transform: translateX(calc(-100% + 66px));
+  -o-transform: translateX(calc(-100% + 66px));
+  -ms-transform: translateX(calc(-100% + 66px));
+  transform: translateX(calc(-100% + 66px));
 }
 .code,
 .test,

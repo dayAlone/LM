@@ -15,8 +15,20 @@
 	width 100%
 	max-width 680px
 	t transform
-	.open &
+	.open--left &
 		transform translateX(calc(50% - 56px))
+	&__profile
+		display none
+		width 37px
+		height 37px
+		border-radius 50%
+		border 1px solid white
+		right 10px
+		top 9px
+		background-size cover
+		position absolute
+		.profile &
+			display block
 	&__trigger
 		position absolute
 		padding 5px 16px
@@ -26,7 +38,8 @@
 		svg
 			path
 				t all
-		&--active
+		
+		&--active, .open--right &
 			svg
 				transform scale(1.1)
 				path
@@ -61,10 +74,19 @@
 	t all
 	transform translateX(-100%)
 	opacity 0
-	
-	.open &
-		transform translateX(0%)
-		opacity 1
+	&--left
+		.open--left &
+			transform translateX(0%)
+			opacity 1
+	&--right
+		transform translateX(100%)
+		.sidebar__content
+			left 20%
+		.sidebar__trigger
+			right 80%
+		.open--right &
+			transform translateX(0%)
+			opacity 1
 	&__trigger
 		width 56px
 		min-height 350px
@@ -84,53 +106,71 @@
 		position fixed
 		z-index 1000
 		box-shadow 0 2px 13px rgba(0, 0, 0, 0.59)
-
-.profile
-	width 100%
-	background #001a51 url(/layout/images/profile.jpg) top left
-	background-size cover
-	min-height 190px
-	text-align: center
-	font-size 17px
-	text-transform: uppercase
-	padding-bottom 19px
-	@media (min-width scr_sm)
-		font-size 30px
-		padding-bottom 30px
-	a
-		color white
-		border-line alpha(white, .7)
-	&__badge
-		width 47px
-		position absolute
-		top -10px
-		left -22px
-		transition-delay .4s
-		t all, .2s
-		opacity 0
-		transform scale(.5)
-		@media (min-width scr_sm)
-			width 94px
-			top -20px
-			left -40px
-		.open &
-			opacity 1
-			transform scale(1)
-	&__avatar
-		display: inline-block
-		position relative
-		height 110px
-		width 110px
-		border 3px solid white
-		margin-top 32px
-		border-radius 50%
+	.badge
+		text-align: center
+		line-height 200px
+		height 190px
+		&__content
+			display inline-block
+			vertical-align: middle
+			text-transform: uppercase
+			color white
+			line-height 30px
+			font-weight: bold
+		img
+			max-height 95px
+			margin-bottom 10px
+			
+	.badge, .profile
+		width 100%
+		background #001a51 url(/layout/images/profile.jpg) top left
 		background-size cover
-		background-position center center
-		margin-bottom 5px
+		min-height 190px
+		text-align: center
+		font-size 17px
+		text-transform: uppercase
+		padding-bottom 19px
+		display block
 		@media (min-width scr_sm)
-			width 220px
-			height 220px
-			margin-top 50px
+			font-size 30px
+			padding-bottom 30px
+		
+	
+	.profile
+		a
+			color white
+			border-line alpha(white, .7)
+		&__badge
+			width 47px
+			position absolute
+			top -10px
+			left -22px
+			transition-delay .4s
+			t all, .2s
+			opacity 0
+			transform scale(.5)
+			@media (min-width scr_sm)
+				width 94px
+				top -20px
+				left -40px
+			.open &
+				opacity 1
+				transform scale(1)
+		&__avatar
+			display: inline-block
+			position relative
+			height 110px
+			width 110px
+			border 3px solid white
+			margin-top 32px
+			border-radius 50%
+			background-size cover
+			background-position center center
+			margin-bottom 5px
+			@media (min-width scr_sm)
+				width 220px
+				height 220px
+				margin-top 50px
 	
 .nav
 	&__item
@@ -143,6 +183,7 @@
 		color white
 		font-size 17px
 		font-weight: bold
+		text-transform: uppercase
 		img
 			margin-right 8px
 			height 29px

@@ -6,7 +6,8 @@ sizeAction = ->
 	$('.tabs').elem('content').height $(window).height() - 50
 
 	scroll = $('.packages').elem('scroll')
-	if scroll.lenght > 0
+
+	if scroll.length > 0
 		el = scroll.find('a:nth-child(2)')
 		left = ( el.position().left + el.width()/2) - $('body').width()/2
 		$('.packages').elem('scroll').animate({
@@ -31,26 +32,33 @@ debounce = (func, wait, immediate) ->
 		if callNow
 			func.apply context, args
 		return
-triggerNav = ->
-	if $('.toolbar').elem('trigger').hasMod 'active'
-		$('.toolbar').elem('trigger').mod 'active', false
-	else
-		$('.toolbar').elem('trigger').mod 'active', true
 
-	if $('body').hasClass 'open'
-		$('body').removeClass 'open', false
+triggerNav = (trigger)->
+	el = $("[data-target='#{trigger.data('target')}']")
+	if el.hasMod 'active'
+		el.mod 'active', false
 	else
-		$('body').addClass 'open', true
+		el.mod 'active', true
+
+	mod = 'open--'+ trigger.data('target')
+	if $('body').hasClass mod
+		$('body').removeClass 'open'
+		$('body').removeClass mod
+	else
+		$('body').addClass mod + ' open'
 
 	sizeAction()
 
 $(document).ready ->
 	$('.sidebar').elem('trigger').on 'click scroll touchstart mousewheel', (e)->
-		debounce triggerNav(), 400
+		debounce triggerNav($(this)), 400
 
 	$('.toolbar').elem('trigger').on 'click', (e)->
-		console.log 1
-		triggerNav()
+		triggerNav $(this)
+		e.preventDefault()
+
+	$('.toolbar').elem('profile').on 'click', (e)->
+		triggerNav $(this)
 		e.preventDefault()
 	
 	$('.present').elem('slider').on('fotorama:showend', (e, f)->

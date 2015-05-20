@@ -9,7 +9,7 @@ body
 	max-width 680px
 	margin 0 auto
 	position: relative
-	&.open
+	.open &
 		overflow hidden
 	@media (min-width scr_sm)
 		box-shadow 0 0 10px 1px alpha(black, .1)
@@ -204,7 +204,10 @@ svg
 		t all
 		.open &
 			opacity .5
+		.open--left &
 			transform translateX(calc(100% - 56px))
+		.open--right &
+			transform translateX(calc(-100% + 66px))
 
 .code, .test, .invite, .bg
 	background url(/layout/images/test.jpg) top center

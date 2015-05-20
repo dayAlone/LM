@@ -11,7 +11,7 @@
     var el, left, scroll;
     $('.tabs').elem('content').height($(window).height() - 50);
     scroll = $('.packages').elem('scroll');
-    if (scroll.lenght > 0) {
+    if (scroll.length > 0) {
       el = scroll.find('a:nth-child(2)');
       left = (el.position().left + el.width() / 2) - $('body').width() / 2;
       return $('.packages').elem('scroll').animate({
@@ -42,16 +42,20 @@
     };
   };
 
-  triggerNav = function() {
-    if ($('.toolbar').elem('trigger').hasMod('active')) {
-      $('.toolbar').elem('trigger').mod('active', false);
+  triggerNav = function(trigger) {
+    var el, mod;
+    el = $("[data-target='" + (trigger.data('target')) + "']");
+    if (el.hasMod('active')) {
+      el.mod('active', false);
     } else {
-      $('.toolbar').elem('trigger').mod('active', true);
+      el.mod('active', true);
     }
-    if ($('body').hasClass('open')) {
-      $('body').removeClass('open', false);
+    mod = 'open--' + trigger.data('target');
+    if ($('body').hasClass(mod)) {
+      $('body').removeClass('open');
+      $('body').removeClass(mod);
     } else {
-      $('body').addClass('open', true);
+      $('body').addClass(mod + ' open');
     }
     return sizeAction();
   };
@@ -59,11 +63,14 @@
   $(document).ready(function() {
     var scrollTimer, x;
     $('.sidebar').elem('trigger').on('click scroll touchstart mousewheel', function(e) {
-      return debounce(triggerNav(), 400);
+      return debounce(triggerNav($(this)), 400);
     });
     $('.toolbar').elem('trigger').on('click', function(e) {
-      console.log(1);
-      triggerNav();
+      triggerNav($(this));
+      return e.preventDefault();
+    });
+    $('.toolbar').elem('profile').on('click', function(e) {
+      triggerNav($(this));
       return e.preventDefault();
     });
     $('.present').elem('slider').on('fotorama:showend', function(e, f) {

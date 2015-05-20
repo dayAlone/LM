@@ -1,18 +1,33 @@
 toolbar.toolbar
 	.toolbar__content
-		a.toolbar__trigger(href="#")
+		a.toolbar__trigger(href="#", data-target="left")
 			include ../../../public_html/layout/images/svg/nav.svg
 		a(href="/main.html")
 			img(src="/layout/images/logo.png", alt="", height="42")
+		a.toolbar__profile(href="/profile.html", style="background-image: url(/layout/images/photo.jpg)", data-target="right")
 
-sidebar.sidebar
+sidebar.sidebar.sidebar--right(data-target="right")
+	.sidebar__content
+		a.badge(href="/code.html")
+			.badge__content
+				img.badge__image(src="/layout/images/joker.png")
+				br
+				| джокер бейдж
+		nav.nav
+			a.nav__item(href="/bages.html") МОИ БЕЙДЖИ
+			a.nav__item(href="/invite.html") ПРИГЛАСИТЬ ДРУГА
+			a.nav__item(href="#") Правила
+			a.nav__item(href="#") МОИ ПРИЗЫ
+			a.nav__item(href="#") МОИ ДАННЫЕ
+	a.sidebar__trigger(data-target="right")
+sidebar.sidebar.sidebar--left(data-target="left")
 	.sidebar__content
 		.profile
 			.profile__avatar(style="background-image: url(/layout/images/photo.jpg)")
 				img.profile__badge(src="/layout/images/badge.png")
 			br
 			| Привет, 
-			a(href="#") Александра
+			a(href="/profile.html") Александра
 			|!
 		nav.nav
 			a.nav__item(href="/code.html").center
@@ -23,4 +38,4 @@ sidebar.sidebar
 			a.nav__item(href="/prizes.html") ПРИЗЫ
 			a.nav__item(href="/tests.html") ТЕСТЫ
 			a.nav__item(href="/") ВЫЙТИ
-	a.sidebar__trigger
+	a.sidebar__trigger(data-target="left")
