@@ -22,9 +22,10 @@ replace      = require 'gulp-replace'
 watch        = require 'gulp-watch'
 imageop      = require 'gulp-image-optimization'
 
-plugins  = ['jquery', 'bootstrap', 'parsley', 'browser', 'fotorama', 'bem', 'hoverIntent' ]
+plugins  = ['jquery', 'bootstrap', 'browser', 'fotorama', 'bem', 'hoverIntent' ]
 
 layout   = 'public_html/layout'
+layout2  = 'uncompressed_html/layout'
 sources  = 'sources/'
 
 path     =
@@ -68,6 +69,32 @@ gulp.task 'html', ->
 		pretty: "\t"
 	.pipe gulp.dest './public_html/'
 
+gulp.task 'html2', ->
+	str = ""
+	list = loadPlugins plugins, 'js'
+	
+	list.push("/script.js")
+
+	for s of list
+		tmp = list[s].split('/')
+		file = tmp[tmp.length-1]
+		str += "<script type=\"text/javascript\" src=\"./layout/js/" +file+"\" async></script>\n\r\t"
+
+	str2 = ""
+	list = [ "bootstrap", "fotorama", "style"]
+
+	for s of list
+		str2 += "<link href=\"./layout/css/" + list[s] + ".css\" rel=\"stylesheet\">\n\r\t"
+
+	gulp.src("#{path.html}*.jade")
+	.pipe(cache('htmled'))
+	.pipe plumber
+		errorHandler: notify.onError("Error: <%= error.message %>")
+	.pipe jade
+		pretty: "\t"
+	.pipe(replace('<script type="text/javascript" src="./layout/js/frontend.js" async></script>', str))
+	.pipe(replace('<link href="./layout/css/frontend.css" rel="stylesheet">', str2))
+	.pipe gulp.dest './uncompressed_html/'
 
 # JavaScript functions
 
@@ -115,6 +142,14 @@ gulp.task 'css_stylus', ->
 		use: nib()
 	.pipe gulp.dest path.css.sources
 
+gulp.task 'css_stylus2', ->
+	gulp.src [ "#{path.css.sources}/style.styl" ]
+	.pipe plumber
+		errorHandler: notify.onError("Error: <%= error.message %>")
+	.pipe stylus 
+		use: nib()
+	.pipe gulp.dest 'uncompressed_html/layout/css/'
+
 gulp.task 'css_front', ['css_stylus'], ->
 	gulp.src [ "#{path.css.sources}/plugins.css", "#{path.css.sources}/style.css" ]
 	.pipe concat 'frontend.css'
@@ -133,6 +168,16 @@ gulp.task 'css_mini', ->
 gulp.task 'copy', ->
 	gulp.src loadPlugins plugins, 'files'
 	.pipe gulp.dest "#{layout}/images/plugins/"
+
+gulp.task 'copy_js', ->
+	list = loadPlugins plugins, 'js'
+	list.push("./sources/js/script.js")
+	gulp.src list
+	.pipe gulp.dest "#{layout2}/js/"
+
+gulp.task 'copy_css', ->
+	gulp.src loadPlugins plugins, 'css'
+	.pipe gulp.dest "#{layout2}/css/"
 
 # SVG functions
 
@@ -167,6 +212,11 @@ gulp.task 'ready', ->
 	sequence 'copy', 'html'
 	sequence 'js_plugins', 'js_front', 'js_mini'
 	sequence 'css_bootstrap', 'css_plugins', 'css_front', 'css_mini'
+
+gulp.task 'ready2', ->
+	sequence 'js_front', 'copy_js', 'html2'
+	sequence 'copy_css', 'css_stylus2'
+
 
 gulp.task 'svg', ->
 	sequence 'svg_mini', 'html', 'reload'

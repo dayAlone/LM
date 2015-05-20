@@ -16,11 +16,6 @@
       "css": "/bootstrap-datepicker/css/datepicker.css"
    },
    "bootstrap":{
-      "js":[
-         "/bootstrap/js/transition.js",
-         "/bootstrap/js/modal.js",
-         "/bootstrap/js/tab.js"
-      ],
       "css":"/../sources/css/bootstrap.css"
    },
    "browser":{

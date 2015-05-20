@@ -1,0 +1,59 @@
+<!DOCTYPE html><html lang='ru'>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link href="./layout/css/bootstrap.css" rel="stylesheet">
+	<link href="./layout/css/fotorama.css" rel="stylesheet">
+	<link href="./layout/css/style.css" rel="stylesheet">
+	
+  <script type="text/javascript" src="./layout/js/jquery.js" async></script>
+	<script type="text/javascript" src="./layout/js/jquery.browser.js" async></script>
+	<script type="text/javascript" src="./layout/js/fotorama.js" async></script>
+	<script type="text/javascript" src="./layout/js/jquery.bem.js" async></script>
+	<script type="text/javascript" src="./layout/js/jquery.hoverIntent.js" async></script>
+	<script type="text/javascript" src="./layout/js/script.js" async></script>
+	
+  <title>L&M</title>
+</head><body>
+<toolbar class="toolbar">
+  <div class="toolbar__content"><a href="#" data-target="left" class="toolbar__trigger"><svg width="24" height="18" viewBox="0 0 24 18" xmlns="http://www.w3.org/2000/svg"><g id="Page-1" fill="none" fill-rule="evenodd"><g id="nav" fill="#FFF"><g id="Page-1"><g id="nav"><path d="M1.826 16h20.348c1.008 0 1.826.448 1.826 1s-.818 1-1.826 1H1.826C.818 18 0 17.552 0 17s.818-1 1.826-1z" id="p3"/><path d="M1.826 8h20.348C23.182 8 24 8.448 24 9c0 .553-.818 1-1.826 1H1.826C.818 10 0 9.553 0 9c0-.552.818-1 1.826-1z" id="p2"/><path d="M1.826 0h20.348C23.182 0 24 .448 24 1s-.818 1-1.826 1H1.826C.818 2 0 1.552 0 1s.818-1 1.826-1z" id="p1"/></g></g></g></g></svg></a><a href="/main.html"><img src="/layout/images/logo.png" alt="" height="42"></a><a href="/profile.html" style="background-image: url(/layout/images/photo.jpg)" data-target="right" class="toolbar__profile"></a></div>
+</toolbar>
+<sidebar data-target="right" class="sidebar sidebar--right">
+  <div class="sidebar__content"><a href="/code.html" class="badge">
+      <div class="badge__content"><img src="/layout/images/joker.png" class="badge__image"><br>джокер бейдж</div></a>
+    <nav class="nav"><a href="/bages.html" class="nav__item">МОИ БЕЙДЖИ</a><a href="/invite.html" class="nav__item">ПРИГЛАСИТЬ ДРУГА</a><a href="#" class="nav__item">Правила</a><a href="#" class="nav__item">МОИ ПРИЗЫ</a><a href="#" class="nav__item">МОИ ДАННЫЕ</a></nav>
+  </div><a data-target="right" class="sidebar__trigger"></a>
+</sidebar>
+<sidebar data-target="left" class="sidebar sidebar--left">
+  <div class="sidebar__content">
+    <div class="profile">
+      <div style="background-image: url(/layout/images/photo.jpg)" class="profile__avatar"><img src="/layout/images/badge.png" class="profile__badge"></div><br>Привет, <a href="/profile.html">Александра</a>!
+    </div>
+    <nav class="nav"><a href="/code.html" class="nav__item center"><img src="/layout/images/code.png">ВВЕСТИ КОД С КАРТОЧКИ </a><a href="/products.html" class="nav__item">L&M</a><a href="/video.html" class="nav__item">ВИДЕО-ШОУ</a><a href="/prizes.html" class="nav__item">ПРИЗЫ</a><a href="/tests.html" class="nav__item">ТЕСТЫ</a><a href="/" class="nav__item">ВЫЙТИ</a></nav>
+  </div><a data-target="left" class="sidebar__trigger"></a>
+</sidebar>
+<div class="wrap">
+  <div class="wrap__content">
+    <div class="invite">
+      <div class="invite__title">Напиши письмо Сергею</div>
+      <form id="feedback-form" action="/userVideo/sendFeedback/" method="post">
+        <input id="Feedback_topic" name="Feedback[topic]" type="text" maxlength="255" placeholder="Тема письма" class="form-input invite__input xs-margin-bottom">
+        <textarea id="Feedback_message" cols="30" rows="10" name="Feedback[message]" placeholder="Текст письма" class="form-textarea invite__textarea"></textarea>
+        <div class="center xs-margin-top">
+          <button type="submit" class="invite__submit submit">Отправить</button>
+        </div>
+      </form>
+    </div>
+    <footer class="footer">
+      <p><a href="mailto:help@lmlab.ru">help@lmlab.ru</a><span>|</span><a>Риски, связанные со здоровьем </a><span>|</span><a>Правила использования сайта</a></p>
+      <p>Горячая линия <a href="tel:88002001105">8-800-200-11-05 </a>&nbsp; с 9:00 до 21:00 по Московскому времени.</p>
+      <p>© 2015 Общество с ограниченной ответственностью "Филип Моррис Сэйлз энд Маркетинг" аффилированная компания Philip Morris International.</p>
+      <p>Доступ на веб-сайт разрешен только гражданам РФ старше 18 лет, являющимся потребителями сигарет, с компьютеров, находящихся в интернет-сети РФ.	</p>
+      <div class="footer__attention">КУРЕНИЕ УБИВАЕТ</div>
+    </footer>
+  </div>
+</div></body>
+</html>
