@@ -1,0 +1,116 @@
+@import 'functions.styl'
+.tabs
+	background-image linear-gradient(302deg, #0067CC 0%, #002C58 100%)
+	&__contents
+		position relative
+	&__content
+		display none
+		min-height 310px
+		position relative
+		t height
+		@media (min-width scr_xs)
+			min-height 400px
+		&--active
+			display block
+	&__footer
+		position absolute
+		bottom 20px
+		width 100%
+		line-height 25px
+		@media (min-width scr_xs)
+			line-height 35px
+		a
+			text-transform: uppercase
+			color white
+			font-size 12px
+			border-line alpha(white, .7), 9px
+			@media (min-width scr_xs)
+				font-size 17px
+				border-line alpha(white, .7), 15px
+		
+	&__form
+		position absolute
+		top 50%
+		margin-top -20px
+		transform translateY(-50%) translateX(-50%)
+		width 77%
+		max-width 300px
+		left 50%
+		@media (min-width scr_xs)
+			max-width 600px
+	&__trigger
+		display inline-block
+		width 50%
+		height 50px
+		background-image linear-gradient(129deg, #0067CC 0%, #002C58 100%)
+		color white
+		text-transform uppercase
+		font-weight: bold
+		font-size 17px
+		text-align: center
+		line-height 53px
+		position relative
+		@media (min-width scr_xs)
+			height 70px
+			line-height 73px
+			font-size 26px
+		&:after, &:before
+			position: absolute
+			top 0
+			width 100%
+			height 1.5px
+			content ""
+			overflow: hidden
+			left 0
+			background-image linear-gradient(0deg, alpha(white, 0) 0%, alpha(white, .8) 100%)
+			border-top-right-radius 2px
+			opacity: .8
+		&:before
+			top auto
+			left auto
+			right 0
+			bottom -1px
+			opacity: .5
+			background-color #004385
+			border-top-right-radius 0px
+			border-bottom-left-radius 2px
+			border-bottom-right-radius 2px
+		&:hover
+			color white
+		&--active
+			background transparent
+			&:before
+				display none
+.login
+	&__link
+		color white
+		text-transform: uppercase
+		font-size 12px
+		border-line alpha(white, .7), 9px
+		position relative
+		@media (min-width scr_xs)
+			font-size 17px
+			border-line alpha(white, .7), 15px
+		&:hover
+			color white
+	&__submit
+		margin-top 20px
+		button()
+	&__lines
+		position relative
+		&:before, &:after
+			content ""
+			top 8px
+			width calc(50% - 50px)
+			border-line alpha(white, .7)
+			height 1px
+			position absolute
+			left 0%
+			@media (min-width scr_xs)
+				width calc(50% - 70px)
+				top 8px
+		&:before
+			left auto
+			right 0%
+	&__input
+		input()

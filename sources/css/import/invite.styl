@@ -1,0 +1,56 @@
+@import 'functions.styl'
+
+.invite
+	h3
+		font-size 13px
+		margin-bottom 0
+		margin-top: 10px
+		font-weight: bold
+		a
+			color white
+			border-line alpha(@color, .5)
+		@media (min-width scr_xs)
+			font-size 25px
+			margin-top: 20px
+	&__submit
+		button()
+		margin-top 10px
+	&__input
+		width 100%
+		input()
+		& + .invite__label
+			margin-top: 5px
+			@media (min-width scr_xs)
+				margin-top 10px
+	&__textarea
+		width 100%
+		input()
+		min-height 160px
+		margin-top 20px
+		margin-bottom 0
+		@media (min-width scr_xs)
+			min-height 320px
+			margin-top 30px
+		& + h3
+			margin-top 0
+			margin-bottom 10px
+	&__title, &__label
+		title()
+		margin-bottom 5px
+	&__label
+		& + .invite__textarea
+			margin-top 0
+	p
+		display block
+		font-size 14px
+		line-height 17px
+		@media (min-width scr_xs)
+			font-size 24px
+			line-height 32px
+		&.small
+			font-size 11px
+			margin-top 10px
+			font-weight 300
+			@media (min-width scr_xs)
+				font-size 22px
+				margin-top 20px

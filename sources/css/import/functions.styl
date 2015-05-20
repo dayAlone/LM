@@ -3,6 +3,91 @@
  */
 @import "nib"
 
+/*
+ * Модификаторы оформления
+ */
+scr_xs = 480px
+scr_sm = 768px
+scr_md = 992px
+scr_lg = 1200px
+
+button()
+	border 0
+	border-radius 4px
+	background cyan
+	min-width 115px
+	height 32px
+	line-height 30px
+	padding-top 3px
+	font-weight: bold
+	text-transform: uppercase
+	font-size 17px
+	color blue
+	position relative
+	background-image url(/layout/images/button.jpg)
+	background-size auto 100%
+	box-shadow 0 2px 3px rgba(8, 27, 62, 0.6)
+	text-shadow 0 1px 1px alpha(white, .3)
+	display inline-block
+	padding 3px 20px 0
+	t all
+	@media (min-width scr_xs)
+		min-width 200px
+		height 47px
+		line-height 45px
+		border-radius 8px
+		font-size 23px
+		padding-top 3px
+	span
+		position relative
+		z-index: 5
+	&:after
+		position absolute
+		width 100%
+		content ""
+		top 0
+		left 0
+		height 100%
+		border-radius 4px
+		opacity .7
+		background-image linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 49.9%, rgba(255, 255, 255, 0.63) 50%, rgba(255, 255, 255, 0) 88%, rgba(255, 255, 255, 0) 100%)
+	&:active, &:focus
+		top 2px
+		box-shadow 0 0px 3px rgba(8, 27, 62, 0.6)
+
+input()
+	width 100%
+	border-radius 0
+	background white
+	height 27px
+	line-height initial
+	padding 1px 10px 0
+	line-height 28px
+	box-shadow none
+	border 0
+	margin-bottom 16px
+	color blue
+	font-size 14px
+	@media (min-width scr_xs)
+		font-size 17px
+		height 44px
+		padding-top: 4px
+
+title()
+	text-transform: uppercase
+	font-size 18px
+	line-height 1.2
+	font-weight: bold
+	margin-bottom 15px
+	@media (min-width scr_xs)
+		font-size 34px
+		margin-bottom 25px
+	img
+		margin-right 10px
+		max-height 44px
+		@media (min-width scr_xs)
+			max-height auto
+			
 full-width()
 	float left
 	width 100%

@@ -81,7 +81,7 @@ gulp.task 'html2', ->
 		str += "<script type=\"text/javascript\" src=\"./layout/js/" +file+"\" async></script>\n\r\t"
 
 	str2 = ""
-	list = [ "bootstrap", "fotorama", "style"]
+	list = [ "bootstrap", "fotorama", "common", "video", "products", "code", "login", "test", "invite"]
 
 	for s of list
 		str2 += "<link href=\"./layout/css/" + list[s] + ".css\" rel=\"stylesheet\">\n\r\t"
@@ -143,7 +143,7 @@ gulp.task 'css_stylus', ->
 	.pipe gulp.dest path.css.sources
 
 gulp.task 'css_stylus2', ->
-	gulp.src [ "#{path.css.sources}/style.styl" ]
+	gulp.src [ "#{path.css.sources}/common.styl", "#{path.css.sources}/import/video.styl", "#{path.css.sources}/import/products.styl", "#{path.css.sources}/import/code.styl", "#{path.css.sources}/import/login.styl", "#{path.css.sources}/import/test.styl", "#{path.css.sources}/import/invite.styl"]
 	.pipe plumber
 		errorHandler: notify.onError("Error: <%= error.message %>")
 	.pipe stylus 

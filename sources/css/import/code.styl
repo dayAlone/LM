@@ -1,0 +1,67 @@
+@import 'functions.styl'
+.code
+	min-height 580px
+	padding 20px 15px 30px
+	@media (min-width scr_xs)
+		min-height 1100px
+		padding 30px 30px 40px
+	&__submit
+		button()
+		margin-top 9px
+	p
+		display block
+		font-size 14px
+		line-height 17px
+		& + .code__title
+			margin-top 20px
+		@media (min-width scr_xs)
+			font-size 24px
+			line-height 32px
+	&__input
+		width 70px
+		input()
+		background #0175e7
+		color white
+		position absolute
+		top 50%
+		left 50%
+		margin-left -35px
+		font-size 12px
+		border-radius 3px
+		margin-top -30px
+		padding 1px 3px 0
+		text-align: center
+		@media (min-width scr_xs)
+			min-width 140px
+			margin-left -70px
+			font-size 15px
+			margin-top -56px
+			min-height 57px
+			line-height 59px
+		&-frame
+			width 100%
+			position relative
+			min-height 220px
+			background url(/layout/images/key-bg.png) top right no-repeat
+			background-position-x calc(50% + 21px)
+			background-size 250px auto
+			margin-bottom -50px
+			@media (min-width scr_xs)
+				min-height 430px
+				margin-bottom -70px
+				background-size 500px auto
+				background-position-x calc(50% + 41px)
+	&__footer
+		position absolute
+		bottom 5px
+		left 0
+		padding 0 15px
+		p
+			font-size 10px
+			line-height 11px
+			font-weight 300
+			@media (min-width scr_xs)
+				font-size 15px
+				line-height 15px
+	.code__title
+		title()

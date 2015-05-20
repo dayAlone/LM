@@ -1,0 +1,120 @@
+@import 'functions.styl'
+
+.test
+	&__presents
+		button()
+		margin-top 20px
+		font-size 13px
+		padding-top 2px
+		@media (min-width scr_xs)
+			font-size 24px
+			padding-top 4px
+			margin-top 40px
+	&__answer
+		& + .test__answer
+			margin-top 15px
+			@media (min-width scr_xs)
+				margin-top 25px
+		input
+			appearance none
+			border 0
+			background url(/layout/images/radio.jpg) top center
+			border-radius 50%
+			background-size cover
+			width 16px
+			height 16px
+			display inline-block
+			box-shadow 0 2px 3px rgba(23, 33, 63, 0.62), inset 0 1px 1px rgba(54, 54, 54, 0.07), inset 0 0 2px #989898
+			margin-right 10px
+			vertical-align: top
+			top 4px
+			position relative
+			&:checked
+				background-position bottom center
+			@media (min-width scr_xs)
+				height 24px
+				width 24px
+		label
+			width 90%
+			font-size 13px
+			font-weight: bold
+			width calc(100% - 30px)
+			@media (min-width scr_xs)
+				font-size 24px
+				font-weight: normal
+				width calc(100% - 60px)
+	&__toolbar
+		font-size 36px
+		font-weight: bold
+		margin-bottom 0px
+		> [class*='col-']
+			padding 0 10px
+			@media (min-width scr_xs)
+				padding 0 20px
+		@media (min-width scr_xs)
+			font-size 65px
+	&__question
+		text-align: center
+		margin-bottom 25px
+		font-size 24px
+		text-transform: uppercase
+		font-weight: bold
+		line-height 26px
+		@media (min-width scr_xs)
+			font-size 46px
+			line-height 50px
+			margin-bottom 45px
+	&-list
+		&__content
+			position absolute
+			width 100%
+			top 50%
+			transform translateY(-50%)
+			color white
+			text-align: center
+		&__name
+			text-transform: uppercase
+			font-weight: bold
+			font-size 24px
+			@media (min-width scr_xs)
+				font-size 40px
+		&__button
+			display inline-block
+			margin-top 10px
+			button()
+		&__item
+			width 100%
+			position relative
+			width calc(100% - 16px)
+			margin 0 8px 10px
+			display block
+			height 185px
+			background blue
+			background-size cover
+			background-position center center
+			@media (min-width scr_xs)
+				padding 12px 10px
+				height 345px
+	&-link
+		width 100%
+		display block
+		color white
+		height 40px
+		line-height 42px
+		padding 0 15px
+		margin-bottom 20px
+		border 1px solid #a0a0a0
+		text-align: right
+		background-size 101% auto !important
+		background-position center center
+		text-transform: uppercase
+		text-shadow 0 1px 5px rgba(0, 0, 0, 0.75)
+		font-weight: bold
+		font-size 17px
+		&:hover
+			color white
+		@media (min-width scr_xs)
+			height 80px
+			font-size 34px
+			line-height 83px
+			margin-bottom 40px
