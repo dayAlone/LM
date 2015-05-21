@@ -1,0 +1,27 @@
+include includes/header
+<body class="profile">
+include includes/toolbar
+.wrap
+	.wrap__content
+		.bg.bages
+			h4 мои трофейные бейджи
+			p Собирай трофейные бейджи, чтобы повысить статус
+			.center.xl-margin-top
+				- for (var i = 0; i < 5; ++i) {
+					.row
+						.col-xs-4
+							img(src="/layout/images/b1.png", alt="").present__badge
+							br
+							| Отличное начало
+						.col-xs-4
+							img(src="/layout/images/b2.png", alt="").present__badge
+							br
+							| Отличное начало
+						.col-xs-4
+							img(src="/layout/images/b3.png", alt="").present__badge
+							br
+							| Отличное начало
+				- }
+		include includes/footer
+</body>
+</html>

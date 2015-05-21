@@ -359,7 +359,7 @@
   font-size: 17px;
   color: #00f;
   position: relative;
-  background-image: url("/layout/images/button.jpg");
+  background-image: url("../images/button.jpg");
   -webkit-background-size: auto 100%;
   -moz-background-size: auto 100%;
   background-size: auto 100%;

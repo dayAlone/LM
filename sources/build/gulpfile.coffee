@@ -78,7 +78,7 @@ gulp.task 'html2', ->
 	for s of list
 		tmp = list[s].split('/')
 		file = tmp[tmp.length-1]
-		str += "<script type=\"text/javascript\" src=\"./layout/js/" +file+"\" async></script>\n\r\t"
+		str += "<script type=\"text/javascript\" src=\"./layout/js/" +file+"\"></script>\n\r\t"
 
 	str2 = ""
 	list = [ "bootstrap", "fotorama", "common", "video", "products", "code", "login", "test", "invite"]
@@ -94,6 +94,9 @@ gulp.task 'html2', ->
 		pretty: "\t"
 	.pipe(replace('<script type="text/javascript" src="./layout/js/frontend.js" async></script>', str))
 	.pipe(replace('<link href="./layout/css/frontend.css" rel="stylesheet">', str2))
+	.pipe(replace('src="/layout/', 'src="./layout/'))
+	.pipe(replace('href="/layout/', 'href="./layout/'))
+	.pipe(replace('url(/layout/', 'url(./layout/'))
 	.pipe gulp.dest './uncompressed_html/'
 
 # JavaScript functions
@@ -143,11 +146,13 @@ gulp.task 'css_stylus', ->
 	.pipe gulp.dest path.css.sources
 
 gulp.task 'css_stylus2', ->
-	gulp.src [ "#{path.css.sources}/common.styl", "#{path.css.sources}/import/video.styl", "#{path.css.sources}/import/products.styl", "#{path.css.sources}/import/code.styl", "#{path.css.sources}/import/login.styl", "#{path.css.sources}/import/test.styl", "#{path.css.sources}/import/invite.styl"]
+	gulp.src [ "#{path.css.sources}/common.styl", "#{path.css.sources}/import/video.styl", "#{path.css.sources}/import/products.styl", "#{path.css.sources}/import/code.styl", "#{path.css.sources}/import/login.styl", "#{path.css.sources}/import/test.styl", "#{path.css.sources}/import/invite.styl", "#{path.css.sources}/import/profile.styl"]
 	.pipe plumber
 		errorHandler: notify.onError("Error: <%= error.message %>")
 	.pipe stylus 
 		use: nib()
+	.pipe(replace('url(/layout/', 'url(../'))
+	.pipe(replace('url("/layout/', 'url("../'))
 	.pipe gulp.dest 'uncompressed_html/layout/css/'
 
 gulp.task 'css_front', ['css_stylus'], ->

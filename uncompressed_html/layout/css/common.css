@@ -3161,25 +3161,25 @@ div.pp_default .pp_loaderIcon {
 }
 @font-face {
   font-family: 'Din Cond';
-  src: url("/layout/fonts/PFDinTextCondPro-Regular.woff") format('woff');
+  src: url("../fonts/PFDinTextCondPro-Regular.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
 @font-face {
   font-family: 'Din Cond';
-  src: url("/layout/fonts/PFDinTextCondPro-Light.woff") format('woff');
+  src: url("../fonts/PFDinTextCondPro-Light.woff") format('woff');
   font-weight: 300;
   font-style: normal;
 }
 @font-face {
   font-family: 'Din Cond';
-  src: url("/layout/fonts/PFDinTextCondPro-Medium.woff") format('woff');
+  src: url("../fonts/PFDinTextCondPro-Medium.woff") format('woff');
   font-weight: bold;
   font-style: normal;
 }
 @font-face {
   font-family: 'Din';
-  src: url("/layout/fonts/PFDinTextPro-Light.woff") format('woff');
+  src: url("../fonts/PFDinTextPro-Light.woff") format('woff');
   font-weight: normal;
   font-style: normal;
 }
@@ -3311,7 +3311,7 @@ div.pp_default .pp_loaderIcon {
   width: 100%;
   height: 100%;
   position: absolute;
-  background: url("/layout/images/toolbar.jpg") top center no-repeat;
+  background: url("../images/toolbar.jpg") top center no-repeat;
   -webkit-background-size: contain;
   -moz-background-size: contain;
   background-size: contain;
@@ -3423,7 +3423,7 @@ div.pp_default .pp_loaderIcon {
 .sidebar .badge,
 .sidebar .profile {
   width: 100%;
-  background: #001a51 url("/layout/images/profile.jpg") top left;
+  background: #001a51 url("../images/profile.jpg") top left;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -3654,7 +3654,7 @@ svg g {
   transform: translateX(calc(-100% + 66px));
 }
 .bg {
-  background: url("/layout/images/test.jpg") top center;
+  background: url("../images/test.jpg") top center;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -3695,96 +3695,9 @@ svg g {
     padding: 30px 30px 40px;
   }
 }
-.profile__button {
-  border: 0;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  background: #0069cd;
-  min-width: 115px;
-  height: 32px;
-  line-height: 30px;
-  padding-top: 3px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 17px;
-  color: #001138;
-  position: relative;
-  background-image: url("/layout/images/button.jpg");
-  -webkit-background-size: auto 100%;
-  -moz-background-size: auto 100%;
-  background-size: auto 100%;
-  -webkit-box-shadow: 0 2px 3px rgba(8,27,62,0.6);
-  box-shadow: 0 2px 3px rgba(8,27,62,0.6);
-  text-shadow: 0 1px 1px rgba(255,255,255,0.3);
-  display: inline-block;
-  padding: 3px 20px 0;
-  -webkit-transition-property: all;
-  -moz-transition-property: all;
-  -o-transition-property: all;
-  -ms-transition-property: all;
-  transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  -moz-transition-duration: 0.3s;
-  -o-transition-duration: 0.3s;
-  -ms-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  height: 45px;
-  line-height: 44px;
-}
-@media (min-width: 480px) {
-  .profile__button {
-    min-width: 200px;
-    height: 47px;
-    line-height: 45px;
-    -webkit-border-radius: 8px;
-    border-radius: 8px;
-    font-size: 23px;
-    padding-top: 3px;
-  }
-}
-.profile__button span {
-  position: relative;
-  z-index: 5;
-}
-.profile__button:after {
-  position: absolute;
-  width: 100%;
-  content: "";
-  top: 0;
-  left: 0;
-  height: 100%;
-  -webkit-border-radius: 4px;
-  border-radius: 4px;
-  opacity: 0.7;
-  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=70)";
-  filter: alpha(opacity=70);
-  background-image: -webkit-linear-gradient(bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49.9%, rgba(255,255,255,0.63) 50%, rgba(255,255,255,0) 88%, rgba(255,255,255,0) 100%);
-  background-image: -moz-linear-gradient(bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49.9%, rgba(255,255,255,0.63) 50%, rgba(255,255,255,0) 88%, rgba(255,255,255,0) 100%);
-  background-image: -o-linear-gradient(bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49.9%, rgba(255,255,255,0.63) 50%, rgba(255,255,255,0) 88%, rgba(255,255,255,0) 100%);
-  background-image: -ms-linear-gradient(bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49.9%, rgba(255,255,255,0.63) 50%, rgba(255,255,255,0) 88%, rgba(255,255,255,0) 100%);
-  background-image: linear-gradient(to top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 49.9%, rgba(255,255,255,0.63) 50%, rgba(255,255,255,0) 88%, rgba(255,255,255,0) 100%);
-}
-.profile__button:active,
-.profile__button:focus {
-  top: 2px;
-  -webkit-box-shadow: 0 0px 3px rgba(8,27,62,0.6);
-  box-shadow: 0 0px 3px rgba(8,27,62,0.6);
-}
-.profile__button span {
-  display: inline-block;
-  vertical-align: middle;
-  font-size: 15px;
-  line-height: 1;
-}
-@media (min-width: 480px) {
-  .profile__button span {
-    font-size: 30px;
-    height: 90px;
-  }
-}
 .fotorama__arr {
   margin-top: -10px;
-  background: url("/layout/images/arrows.png") top left;
+  background: url("../images/arrows.png") top left;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
@@ -4045,7 +3958,7 @@ svg g {
   -o-transform: translateY(-50%) translateX(-50%);
   -ms-transform: translateY(-50%) translateX(-50%);
   transform: translateY(-50%) translateX(-50%);
-  background: url("/layout/images/video.png");
+  background: url("../images/video.png");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   background-size: cover;
