@@ -4554,31 +4554,54 @@ svg g {
  * Примеси
  */
 #products,
-#techs,
-#filter {
+#filter,
+.product__item {
   border: 1px solid #466788;
   padding: 20px 10px 0px;
+  position: relative;
   background-color: rgba(0,44,120,0.4);
 }
 @media (min-width: 480px) {
   #products,
-  #techs,
-  #filter {
+  #filter,
+  .product__item {
     margin-bottom: 50px;
     padding: 30px 10px 25px;
   }
 }
 @media (min-width: 480px) {
   #products .fotorama__wrap,
-  #techs .fotorama__wrap,
   #filter .fotorama__wrap,
+  .product__item .fotorama__wrap,
   #products .fotorama__stage,
-  #techs .fotorama__stage,
   #filter .fotorama__stage,
+  .product__item .fotorama__stage,
   #products .fotorama__stage__shaft,
-  #techs .fotorama__stage__shaft,
-  #filter .fotorama__stage__shaft {
+  #filter .fotorama__stage__shaft,
+  .product__item .fotorama__stage__shaft {
     min-height: 400px;
+  }
+}
+#techs {
+  border: 1px solid #466788;
+}
+#techs .fotorama__arr--prev {
+  left: 13px;
+}
+#techs .fotorama__arr--next {
+  right: 13px;
+}
+#techs .fotorama__nav-wrap {
+  position: absolute;
+  width: 100%;
+  bottom: 17px;
+  z-index: 1000;
+  height: 9px;
+}
+@media (min-width: 480px) {
+  #techs .fotorama__nav-wrap {
+    height: 15px;
+    bottom: 20px;
   }
 }
 #products {
@@ -4678,11 +4701,38 @@ svg g {
 .product__item {
   position: relative;
 }
+.product__dots {
+  height: 35px;
+  line-height: 35px;
+  width: 100%;
+  text-align: center;
+}
+.product__dot {
+  width: 12px;
+  height: 12px;
+  border: 0;
+  display: inline-block;
+  margin: 0 4px;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #fff;
+}
+@media (min-width: 480px) {
+  .product__dot {
+    width: 22px;
+    height: 22px;
+  }
+}
+.product__dot--active {
+  background: #001138;
+}
 .product__image {
   position: absolute;
-  max-width: 47%;
-  top: 0;
-  right: 0px;
+  max-width: 45%;
+  max-height: 85%;
+  max-height: calc(88% - 35px);
+  top: 7%;
+  right: 10px;
 }
 @media (min-width: 480px) {
   .product__image {
@@ -4697,6 +4747,7 @@ svg g {
   font-weight: bold;
   margin-bottom: 15px;
   margin-bottom: 3px;
+  max-width: 50%;
 }
 @media (min-width: 480px) {
   .product__name,
@@ -4722,6 +4773,7 @@ svg g {
   -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
   filter: alpha(opacity=50);
   line-height: 1.4;
+  max-width: 50%;
 }
 @media (min-width: 480px) {
   .product__description {

@@ -12790,8 +12790,7 @@ qe[Xc]=d(N(yb)),qe[Zc]=d(N(Mb+" "+Ob+rc,N(ic))),qe[Yc]=d(N(Mb+" "+Nb+rc,N(hc))),
       var id;
       id = f.activeFrame.id;
       $('.present').elem('content').mod('active', false);
-      $("#p-" + id).mod('active', true);
-      return console.log($("#p-" + id));
+      return $("#p-" + id).mod('active', true);
     }).fotorama();
     x = void 0;
     $(window).resize(function() {

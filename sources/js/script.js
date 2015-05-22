@@ -77,8 +77,7 @@
       var id;
       id = f.activeFrame.id;
       $('.present').elem('content').mod('active', false);
-      $("#p-" + id).mod('active', true);
-      return console.log($("#p-" + id));
+      return $("#p-" + id).mod('active', true);
     }).fotorama();
     x = void 0;
     $(window).resize(function() {

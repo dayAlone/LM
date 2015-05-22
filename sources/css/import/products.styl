@@ -1,8 +1,9 @@
 @import 'functions.styl'
 
-#products, #techs, #filter
+#products, #filter, .product__item
 	border 1px solid #466788
 	padding 20px 10px 0px
+	position relative
 	background-color alpha(#002C78, .4)
 	@media (min-width scr_xs)
 		margin-bottom 50px
@@ -11,7 +12,25 @@
 		&__wrap, &__stage, &__stage__shaft
 			@media (min-width scr_xs)
 				min-height 400px
-				
+
+#techs
+	border 1px solid #466788
+	.fotorama
+		&__arr
+			&--prev
+				left 13px
+			&--next
+				right 13px
+		&__nav-wrap
+			position absolute
+			width 100%
+			bottom 17px
+			z-index 1000
+			height 9px
+			@media (min-width scr_xs)
+				height 15px
+				bottom 20px
+		
 #products
 	padding 20px 15px 0px
 	@media (min-width scr_xs)
@@ -77,20 +96,42 @@
 			margin-bottom 25px
 	&__item
 		position relative
+	&__dots
+		height 35px
+		line-height 35px
+		width 100%
+		text-align: center
+	&__dot
+		width 12px
+		height 12px
+		border 0
+		display inline-block
+		margin 0 4px
+		border-radius 50%
+		background white
+		@media (min-width scr_xs)
+			width 22px
+			height 22px
+		&--active
+			background #001138
 	&__image
 		position absolute
-		max-width 47%
-		top 0
-		right 0px
+		max-width 45%
+		max-height 85%
+		max-height calc(88% - 35px)
+		top 7%
+		right 10px
 		@media (min-width scr_xs)
 			right 20px
 	&__name, &__title
 		title()
 		margin-bottom 3px
+		max-width 50%
 	&__description
 		font-size 9px
 		opacity .5
 		line-height 1.4
+		max-width 50%
 		@media (min-width scr_xs)
 			font-size 20px
 

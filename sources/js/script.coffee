@@ -60,12 +60,11 @@ $(document).ready ->
 	$('.toolbar').elem('profile').on 'click', (e)->
 		triggerNav $(this)
 		e.preventDefault()
-	
+
 	$('.present').elem('slider').on('fotorama:showend', (e, f)->
 		id = f.activeFrame.id
 		$('.present').elem('content').mod 'active', false
 		$("#p-#{id}").mod 'active', true
-		console.log $("#p-#{id}")
 	).fotorama()
 	
 	x = undefined

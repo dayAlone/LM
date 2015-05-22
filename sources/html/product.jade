@@ -4,69 +4,30 @@ include includes/toolbar
 .wrap
 	.wrap__content
 		.bg.product
-			#products.fotorama(data-width="100%" data-height="210", data-arrows="false")
-				.product__item
-					.product__name L&M white label
-					.product__description
-						| 20 сигарет с фильтром-мундштуком. <br>
-						| Смола: 1мг/сиг. <br>
-						| Никотин: 0,1 мг/сиг.<br> 
-						| СО: 2мг/сиг
-					.product__tech-logos
-						img(src="/layout/images/tech-1.png", alt="")
-						img(src="/layout/images/tech-2.png", alt="")
-					img(src="/layout/images/product.png", alt="").product__image
-				.product__item
-					.product__name L&M white label
-					.product__description
-						| 20 сигарет с фильтром-мундштуком. <br>
-						| Смола: 1мг/сиг. <br>
-						| Никотин: 0,1 мг/сиг.<br> 
-						| СО: 2мг/сиг
-					.product__tech-logos
-						img(src="/layout/images/tech-1.png", alt="")
-						img(src="/layout/images/tech-2.png", alt="")
-					img(src="/layout/images/product.png", alt="").product__image
-				.product__item
-					.product__name L&M white label
-					.product__description
-						| 20 сигарет с фильтром-мундштуком. <br>
-						| Смола: 1мг/сиг. <br>
-						| Никотин: 0,1 мг/сиг.<br> 
-						| СО: 2мг/сиг
-					.product__tech-logos
-						img(src="/layout/images/tech-1.png", alt="")
-						img(src="/layout/images/tech-2.png", alt="")
-					img(src="/layout/images/product.png", alt="").product__image
-			#techs.fotorama(data-width="100%" data-height="210", data-arrows="always").l-margin-top
-				.product__tech
-					.product__tech-content
-						img(src="/layout/images/tech.png", alt="")
-						p Специальная технология<br>более тонкой нарезки табака <br>для неизменного качества вкуса.
-				.product__tech
-					.product__tech-content
-						img(src="/layout/images/tech.png", alt="")
-						p Специальная технология<br>более тонкой нарезки табака <br>для неизменного качества вкуса.
-				.product__tech
-					.product__tech-content
-						img(src="/layout/images/tech.png", alt="")
-						p Специальная технология<br>более тонкой нарезки табака <br>для неизменного качества вкуса.
-				.product__tech
-					.product__tech-content
-						img(src="/layout/images/tech.png", alt="")
-						p Специальная технология<br>более тонкой нарезки табака <br>для неизменного качества вкуса.
-				.product__tech
-					.product__tech-content
-						img(src="/layout/images/tech.png", alt="")
-						p Специальная технология<br>более тонкой нарезки табака <br>для неизменного качества вкуса.
-				.product__tech
-					.product__tech-content
-						img(src="/layout/images/tech.png", alt="")
-						p Специальная технология<br>более тонкой нарезки табака <br>для неизменного качества вкуса.
-				.product__tech
-					.product__tech-content
-						img(src="/layout/images/tech.png", alt="")
-						p Специальная технология<br>более тонкой нарезки табака <br>для неизменного качества вкуса.
+			.product__item
+				.product__name L&M white label
+				.product__description
+					| 20 сигарет с фильтром-мундштуком. <br>
+					| Смола: 1мг/сиг. <br>
+					| Никотин: 0,1 мг/сиг.<br> 
+					| СО: 2мг/сиг
+				.product__tech-logos
+					img(src="/layout/images/tech-1.png", alt="")
+					img(src="/layout/images/tech-2.png", alt="")
+				img(src="/layout/images/product.png", alt="").product__image
+				.product__dots
+					a.product__dot(href="#")
+					a.product__dot(href="#")
+					a.product__dot.product__dot--active(href="#")
+					a.product__dot(href="#")
+					a.product__dot(href="#")
+			#techs(data-width="100%", data-arrows="always").fotorama.l-margin-top
+				img(src="/layout/images/flt-1.jpg")
+				img(src="/layout/images/flt-2.jpg")
+				img(src="/layout/images/flt-3.jpg")
+				img(src="/layout/images/flt-4.jpg")
+				img(src="/layout/images/flt-5.jpg")
+				img(src="/layout/images/flt-6.jpg")
 			include includes/products-common
 		include includes/footer
 </body>
