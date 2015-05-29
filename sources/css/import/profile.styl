@@ -11,6 +11,55 @@
 	img
 		margin-bottom 5px
 .profile
+	&__title
+		text-transform: uppercase
+		font-size 19px
+		font-weight: bold
+		@media (min-width scr_xs)
+			font-size 34px
+	&__progress
+		height 9px
+		width 80%
+		margin 3px 10% 10px
+		border-radius 17px
+		background: white
+		padding 2px
+		position relative
+		&-value
+			height 5px
+			border-radius 17px
+			background-color #0075C4
+			@media (min-width scr_xs)
+				height 11px
+		@media (min-width scr_xs)
+			height 15px
+	&__slider
+		border 1px solid #466788
+		padding 20px 10px 0px
+		margin-bottom 30px
+		position relative
+		background-color alpha(#002C78, .4)
+		@media (min-width scr_xs)
+			margin-bottom 50px
+			padding 30px 10px 25px
+		.fotorama
+			&__arr
+				@media (max-width scr_xs)
+					width 13px
+			&__wrap, &__stage, &__stage__shaft
+				@media (min-width scr_xs)
+					min-height 170px
+	&__status
+		padding 0 35px
+		&--disabled
+			opacity .5
+		p
+			margin 0
+			max-width none
+			@media (min-width scr_xs)
+				font-size 16px
+		img
+			max-width 90%
 	&__button
 		button()
 		height 45px
@@ -21,5 +70,6 @@
 			font-size 15px
 			line-height 1
 			@media (min-width scr_xs)
-				font-size 30px
+				font-size 20px
 				height 90px
+				line-height 1.1

@@ -16,6 +16,87 @@
 .bages img {
   margin-bottom: 5px;
 }
+.profile__title {
+  text-transform: uppercase;
+  font-size: 19px;
+  font-weight: bold;
+}
+@media (min-width: 480px) {
+  .profile__title {
+    font-size: 34px;
+  }
+}
+.profile__progress {
+  height: 9px;
+  width: 80%;
+  margin: 3px 10% 10px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  background: #fff;
+  padding: 2px;
+  position: relative;
+}
+.profile__progress-value {
+  height: 5px;
+  -webkit-border-radius: 17px;
+  border-radius: 17px;
+  background-color: #0075c4;
+}
+@media (min-width: 480px) {
+  .profile__progress-value {
+    height: 11px;
+  }
+}
+@media (min-width: 480px) {
+  .profile__progress {
+    height: 15px;
+  }
+}
+.profile__slider {
+  border: 1px solid #466788;
+  padding: 20px 10px 0px;
+  margin-bottom: 30px;
+  position: relative;
+  background-color: rgba(0,44,120,0.4);
+}
+@media (min-width: 480px) {
+  .profile__slider {
+    margin-bottom: 50px;
+    padding: 30px 10px 25px;
+  }
+}
+@media (max-width: 480px) {
+  .profile__slider .fotorama__arr {
+    width: 13px;
+  }
+}
+@media (min-width: 480px) {
+  .profile__slider .fotorama__wrap,
+  .profile__slider .fotorama__stage,
+  .profile__slider .fotorama__stage__shaft {
+    min-height: 170px;
+  }
+}
+.profile__status {
+  padding: 0 35px;
+}
+.profile__status--disabled {
+  opacity: 0.5;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+  filter: alpha(opacity=50);
+}
+.profile__status p {
+  margin: 0;
+  max-width: none;
+}
+@media (min-width: 480px) {
+  .profile__status p {
+    font-size: 16px;
+  }
+}
+.profile__status img {
+  max-width: 90%;
+}
 .profile__button {
   border: 0;
   -webkit-border-radius: 4px;
@@ -99,7 +180,8 @@
 }
 @media (min-width: 480px) {
   .profile__button span {
-    font-size: 30px;
+    font-size: 20px;
     height: 90px;
+    line-height: 1.1;
   }
 }

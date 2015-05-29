@@ -5,13 +5,59 @@ include includes/toolbar
 	.wrap__content
 		.bg
 			h4 & БОЛЬШЕ ТРОФИ БЕЙДЖЕЙ ВЫШЕ СТАТУС
-			.profile__slider(data-width="100%" data-height="210", data-arrows="always")
+			.profile__slider.fotorama(data-width="100%" data-height="75", data-arrows="always")
 				.profile__status
-					.row
-						.col-xs-5
+					.row.no-gutter
+						.col-xs-4.right
+							img(src="/layout/images/profile-star.png", alt="")
+						.col-xs-8.center
+							.profile__title опытный
+							.profile__progress
+								.profile__progress-value(style="width:70%")
+							p 99 из 99 бейджей собрано
+				.profile__status.profile__status--disabled
+					.row.no-gutter
+						.col-xs-4.right
+							img(src="/layout/images/profile-star.png", alt="")
+						.col-xs-8.center
+							.profile__title опытный
+							.profile__progress
+								.profile__progress-value(style="width:70%")
+							p 99 из 99 бейджей собрано
+				.profile__status.profile__status--disabled
+					.row.no-gutter
+						.col-xs-4.right
+							img(src="/layout/images/profile-star.png", alt="")
+						.col-xs-8.center
+							.profile__title опытный
+							.profile__progress
+								.profile__progress-value(style="width:70%")
+							p 99 из 99 бейджей собрано
 
 			h4.xs-margin-bottom мои расходуемые бейджи
 			p Собирай свою коллекцию бейджей за активное действие на сайте и забирай гарантированные призы
+			.profile__slider.fotorama(data-width="100%" data-height="75", data-arrows="always")
+				.profile__status
+					.row.no-gutter
+						.col-xs-4
+							img(src="/layout/images/profile-badge.png", alt="")
+						.col-xs-8
+							.profile__title.xs-margin-top отличное начало
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				.profile__status
+					.row.no-gutter
+						.col-xs-4
+							img(src="/layout/images/profile-badge.png", alt="")
+						.col-xs-8
+							.profile__title.xs-margin-top отличное начало
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+				.profile__status
+					.row.no-gutter
+						.col-xs-4
+							img(src="/layout/images/profile-badge.png", alt="")
+						.col-xs-8
+							.profile__title.xs-margin-top отличное начало
+							p Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 			.center.xxl-margin-top
 				a.profile__button(href="/badges.html")
 					span
